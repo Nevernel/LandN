@@ -1,0 +1,47 @@
+<div class="container-fluid row">
+    <div class="col-lg-8 section-container">
+        <div class="section">
+            <img src="img/house.jpg">
+            <div class="block container-fluid round-container">
+                <?php foreach($pdo->query('SELECT * FROM description') as $row){
+                ?>
+                <div class="description">
+                    <?php
+                    {
+                        echo $row['Description'];
+                    }
+                    ?>
+                </div>
+                <div class="note">
+                    <?php
+                    {
+                        echo $row['note'];
+                    };
+                    ?>
+
+
+                </div>
+            </div> <?php } ?>
+        </div>
+    </div>
+    <div class="col-lg-4" style="height: 100%">
+
+        <div class="block-ege round-container">
+            <?php foreach($pdo->query('SELECT * FROM univ') as $row){
+            ?>
+            <div class="ege-items">
+                <div class="ege-item">
+                    <div class="description">
+                        <?php
+                        {
+                            echo $row['Name'];
+                        } ?>
+                    </div>
+                    <div class="note">
+                        <?php
+                        {
+                            echo $row['Points'];
+                        }?>
+                    </div>
+                </div>
+            </div> <?php } ?>
